@@ -97,37 +97,54 @@
 </h2>
 <div class="cleared"></div>
 <div class="art-postcontent">
-<form name="input" action="html_form_action.asp" method="get">
-				<table width="600" border="1">
-  <tr>
-    <td rowspan=7 > <img src=images/dosen.png height=200 width=200 ></td>
+<form action="<?$_SERVER['PHP_SELF']?>" method="post" name="pencarian" id="pencarian">
+<table width="600" border="1">
+    <tr>
     <td>Id Dosen</td>
-    <td><input  type="text" /> </td>
-  </tr>
+    <select name="iddosen" style="width:210px" size=1>  
+    <option value="dsn0001" >dsn0001</option></select>
+    <td><input type="submit" name="submit" id="submit" value="Cari"></td>
+    </tr>
+</table>
+</form>
+<?
+    include "koneksi.php";
+    if ((isset($_POST['submit'])) )
+    {
+	$cari = $_POST['iddosen'];
+	$sql = mysql_query("SELECT * FROM dosen WHERE id_dosen='$cari' ") or die(mysql_error());
+    }
+?>
+
+<? while ($ds=mysql_fetch_array($sql))
+	{ ?>
+ 
+    
+    <table width="600" border="1">
   <tr>
+  <td rowspan=5 > <img src=images/dosen.png height=200 width=200 ></td>
     <td>Nama Dosen</td>
-    <td><input  type="text" /></td>
-  </tr>
-  <tr>
-    <td>Jurusan</td>
-    <td><input  type="text" /></td>
+    <td><? echo $ds[1];  ?></td>
   </tr>
   <tr>
     <td>Alamat</td>
-    <td><input  type="text" /></td>
+    <td><? echo $ds[2];  ?></td>
   </tr>
   <tr>
     <td>Telp</td>
-    <td><input  type="text" /></td>
+    <td><? echo $ds[3];  ?></td>
+  </tr>
+  <tr>
+    <td>Lulusan</td>
+    <td><? echo $ds[4];  ?></td>
   </tr>
   <tr>
     <td>Catatan</td>
-    <td><input  type="text" /></td>
+    <td><textarea readonly="readonly" ><? echo $ds[5]; } ?></textarea></td>
   </tr>
 
+
 </table>
-<input type="submit" value="Kirim" /> <input type="button" value="batal" />
-</form> 
 
                 </div>
                 <div class="cleared"></div>

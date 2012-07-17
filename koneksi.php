@@ -1,8 +1,8 @@
 <?
 $host="localhost";
 $user="root";
-$pass="";
-//$pass="11111";
+//$pass="";
+$pass="11111";
 $db="ungu";
 
 $koneksi=mysql_connect($host,$user,$pass);

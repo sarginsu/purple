@@ -29,7 +29,7 @@
 <div class="art-nav-inner">
 	<ul class="art-hmenu">
 		<li>
-			<a href="./matakuliah.html" class="active"><span class="l"></span><span class="r"></span><span class="t">Mata Kuliah</span></a>
+			<a href="./matakuliah.html" ><span class="l"></span><span class="r"></span><span class="t">Mata Kuliah</span></a>
 		</li>	
 		<li>
 			<a href="./dosen.html"><span class="l"></span><span class="r"></span><span class="t">Dosen</span></a>
@@ -38,13 +38,13 @@
 			<a href="./mahasiswa.html"><span class="l"></span><span class="r"></span><span class="t">Mahasiswa</span></a>
 		</li>
         <li>
-			<a href="./absensi.html"><span class="l"></span><span class="r"></span><span class="t">Absensi</span></a>
+			<a href="./absensi.html" class="active"><span class="l"></span><span class="r"></span><span class="t">Absensi</span></a>
 		</li>
         <li>
 			<a href="./krs.html"><span class="l"></span><span class="r"></span><span class="t">KRS</span></a>
 		</li>
         <li>
-			<a href="./khs.html"><span class="l"></span><span class="r"></span><span class="t">KHS</span></a>
+			<a href="./KHS.html"><span class="l"></span><span class="r"></span><span class="t">KHS</span></a>
 		</li>
         <li>
 			<a href="./jadwal.html"><span class="l"></span><span class="r"></span><span class="t">Jadwal</span></a>
@@ -93,64 +93,25 @@
 <div class="art-post-inner art-article">
 
 <h2 class="art-postheader">
-                Absensi Siswa
+                Pengumuman
 </h2>
 <div class="cleared"></div>
 <div class="art-postcontent">
-<form name="input" action="html_form_action.asp" method="get">
+<form name="input" action="absensi2.php" method="get">
 				<table width="600" border="1">
+  
   <tr>
-    <td>Kode Jadwal :</td>
-    <td><input  type="text" /></td>
+    <td>Pengumuman :</td>
+    <td><input  type="text" name="kode_jadwal" size=60 /></td>
   </tr>
   <tr>
-    <td>Id Dosen</td>
-    <td><input  type="text" /></td>
+    <td></td>
+    <td><input type="radio" name="kepada" value="TI" ></td>
   </tr>
-  <tr>
-    <td>Minggu Ke</td>
-    <td><input  type="text" /></td>
-  </tr>
-
-</table>
-<table width="600" border="1">
-  <tr>
-    <td colspan="6">&nbsp;</td>
-
-  </tr>
-  <tr>
-    <td>No</td>
-    <td>Nim</td>
-    <td>Nama Mahasiswa</td>
-    <td>Hadir</td>
-    <td>Ijin</td>
-    <td>Sakit</td>
-  </tr>
-  <tr>
-    <?
-	include "koneksi.php";
-	$sql = "SELECT nim,alpa,hadir,ijin from detail_absen where kode_da = kda1001";
-	$data = mysql_query($sql);
-	$no = 0;
-	
-	while ($m = mysql_fetch_row($data)) {
-		$no++;
-		echo "<tr>";
-			echo "<td width=21 >$no</td>";
-			echo "<td ><input  size=12 type=text width=10 name=nim$no value='$m[0]' disabled='yes' ></td>";
-			echo "<td width=317><input size=46  type=text name=nama value='$m[1]' disabled='yes'></td>";
-			echo "<td><input type=radio name=absen$no value=hadir></td>";
-			echo "<td><input type=radio name=absen$no value=ijin></td>";
-			echo "<td><input type=radio name=absen$no value=sakit></td>";
-		echo "</tr>";
-		
-	}
-		echo "<input type=hidden name=total value=$no >"
-  ?>
-  </tr>
+  
 </table>
 
-<input type="submit" value="Kirim" /> <input type="button" value="batal" />
+<input type="submit" value="Cari" />
 </form> 
 
                 </div>

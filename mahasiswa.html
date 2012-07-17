@@ -103,17 +103,17 @@
 	<td>Jurusan :</td>
     <td><select name="jurusan">Jurusan</option>
     	<option value="111">Teknik Informatika (S1)</option>
-        <option value="112">Teknik Informatika (D3)</option>
-        <option value="113">Manajemen Informatika (D3)</option></select>
+        <option value="222">Teknik Informatika (D3)</option>
+        <option value="333">Manajemen Informatika (D3)</option></select>
 	</td>
   </tr>
   <tr>
     <td>Nim</td>
-    <td><input  type="text" name="nim"/> </td>
+    <td><input  type="text" name="nim" /> </td>
   </tr>
   <tr>
     <td>Nama Mahasiswa</td>
-    <td><input  type="text" name="nama"/></td>
+    <td><input  type="text" name="nama" size=40/></td>
   </tr>
   <tr>
     <td>Tempat Lahir</td>
@@ -124,16 +124,17 @@
     <td><input  type="text" name="tgl_lahir"/></td>
   </tr>
   <tr>
+    <td>Jenis Kelamin</td>
+    <td> <input  type="radio" name="jk" value="LAKI-LAKI"/>Laki-laki
+	 <input  type="radio" name="jk" value="PEREMPUAN"/>Perempuan</td>
+  </tr>
+  <tr>
     <td>Alamat</td>
-    <td><input  type="text" name="alamat"/></td>
+    <td><input  type="text" name="alamat" size=50/></td>
   </tr>
   <tr>
     <td>Telepon</td>
     <td><input  type="text" name="tlpn"/></td>
-  </tr>
-  <tr>
-    <td>Hp</td>
-    <td><input  type="text" name="hp"/></td>
   </tr>
   <tr>
     <td>Nama Orang Tua</td>
@@ -148,24 +149,22 @@
     <td><input  type="text" name="tlpn_orangtua"/></td>
   </tr>
   <tr>
-    <td>Nama Wali</td>
-    <td><input  type="text" name="nama_wali"/></td>
-  </tr>
-  <tr>
-    <td>Alamat Wali</td>
-    <td><input  type="text" name="alamat_wali"/></td>
-  </tr>
-  <tr>
-    <td>Telp Wali</td>
-    <td><input  type="text" name="tlpn_wali"/></td>
-  </tr>
-  <tr>
     <td>Foto Mahasiswa</td>
     <td><input  type="File" name="foto"/></td>
   </tr>
+   <tr>
+    <td>Pasword</td>
+    <td><input  type="text" name="pass"/></td>
+  </tr>
   <tr>
     <td>Dosen Wali</td>
-    <td><input  type="text" name="dosen_wali"/></td>
+    <td><input  type="text" name="dosen_wali"/><input type="button" value="Cari"</td>
+  </tr>
+  <tr>
+    <td>Pembayaran Uang Kuliah</td>
+    <td><select name="status_ukul">Jurusan</option>
+    	<option value="belum">Belum lunas</option>
+        <option value="lunas">Lunas</option></select></td>
   </tr>
 
 </table>

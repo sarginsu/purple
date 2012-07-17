@@ -93,7 +93,7 @@
 <div class="art-post-inner art-article">
 
 <h2 class="art-postheader">
-                KHS
+                Jadwal
 </h2>
 <div class="cleared"></div>
 <div class="art-postcontent">

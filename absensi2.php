@@ -100,7 +100,7 @@
 <form name="input" action="simpan_absensi.php" method="get">
 				<table width="600" border="1">
 	<tr>
-    <td>Kode Krs :</td>
+    <td>Kode Jadwal :</td>
 	<?
     //<td><input  type="text" name="krs" value="" /></td>
 	echo "<td><input  type=text name=krs value=$_GET[krs] /></td>";
@@ -118,8 +118,21 @@
         </select>
   </tr>
   <tr>
+    <td>Kode Mata Kuliah</td>
+    <td><input  type="text" name="pertemuan" size=10 /></td>
+  </tr>
+  <tr>
+    <td>Mata Kuliah</td>
+    <td><input  type="text" name="pertemuan" size=30 /></td>
+  </tr>
+  <tr>
     <td>Pertemuan Ke</td>
-    <td><input  type="text" name="pertemuan" /></td>
+    <td><select name="pertemuan_ke">
+	<? for($i=1; $i<17; $i++)
+	{ 
+	    echo  "<option value='$i'>$i</option> ";
+        } ?>
+    </td></select>
   </tr>
   <tr>
     <td>Materi Pertemuan</td>
@@ -149,8 +162,8 @@
 		$no++;
 		echo "<tr>";
 			echo "<td width=21 >$no</td>";
-			echo "<td ><input  size=12 type=text width=10 name=nim$no value='$m[0]'></td>";
-			echo "<td width=317><input size=46  type=text name=nama value='$m[1]'></td>";
+			echo "<td ><input  size=12 type=text width=10 name=nim$no value='$m[0]' disabled='yes' ></td>";
+			echo "<td width=317><input size=46  type=text name=nama value='$m[1]' disabled='yes'></td>";
 			echo "<td><input type=radio name=absen$no value=hadir></td>";
 			echo "<td><input type=radio name=absen$no value=ijin></td>";
 			echo "<td><input type=radio name=absen$no value=sakit></td>";

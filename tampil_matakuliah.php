@@ -97,24 +97,42 @@
 </h2>
 <div class="cleared"></div>
 <div class="art-postcontent">
-<form name="input" action="html_form_action.asp" method="get">
-				<table width="600" border="1">
+<table width="600" border="1">
   <tr>
-    <td>Jurusan :</td>
-    <td><select >Jurusan</option>
-    	<option value="ti" onclick=>Teknik Informatika (S1)</option>
-        <option value="tid3">Teknik Informatika (D3)</option>
-        <option value="mi">Manajemen Informatika (D3)</option>
+    <td>
+	Jurusan
+    </td>
+    <td>
+	<form action="<?$_SERVER['PHP_SELF']?>" method="post" name="pencarian" id="pencarian">     
+	<select name="jurusan" style="width:210px" size=1>  
+	<option value="111" >Teknik Informatika (S1)</option>
+        <option value="222">Teknik Informatika (D3)</option>
+        <option value="333">Manajemen Informatika (D3)</option> 
+  </select><input type="submit" name="submit" id="submit" value="Cari"> </form> 
+    </td>
   </tr>
   <tr>
     <td>Semester :</td>
-    <td><input  type="text" /><input type="submit" value="cari" />
+    <td>
+	<select name="semester">Jurusan
+	<option value="I">I</option>
+	<option value="II">II</option>
+	<option value="III">III</option>
+	<option value="IV">IV</option>
+	<option value="V">V</option>
+	<option value="VI">VI</option>
+	<option value="VII">VII</option>
+	<option value="VIII">VIII</option>
+	</select>
+	
     <? include "koneksi.php";
-	$sql = "select * from matakuliah where (select kode_jur from jurusan where nama_jur='TEKNIK INFORMATIKA') and semester='I'";
-	$hasil = mysql_query($sql,$koneksi);
-	$i=0;
+    if ((isset($_POST['submit'])) )
+    {
+	$jurusan = $_POST['jurusan'];
+	$sql = mysql_query("SELECT * FROM matakuliah WHERE kode_jur= $jurusan ") or die(mysql_error());	         
+    }
     ?>
-</form> </td>
+ </td>
   </tr>
 </table>
 			    
@@ -130,10 +148,10 @@
     <td width="170">SKS</td>
   </tr>
   
-  <? while ($ds = mysql_fetch_row($hasil)) {?>
+  <? while ($ds=mysql_fetch_array($sql)) {?>
   <tr>
     <td width="21" ><? echo $i=$i+1; ?><div align="center"></div></td>
-    <td width="64"><? echo $ds[1]; ?></td>
+    <td width="64"><? echo $ds[0]; ?></td>
     <td width="317"><? echo $ds[2]; ?></td>
     <td><? echo $ds[3]; ?></td>
   </tr>
