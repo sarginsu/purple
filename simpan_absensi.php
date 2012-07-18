@@ -15,5 +15,4 @@
 	echo $sql;
 	
     //header('Location: '.$uri.'/purple/tampil_absensi.php');
-	//Tes untuk email!!
 ?>
