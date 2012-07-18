@@ -97,6 +97,16 @@
 </h2>
 <div class="cleared"></div>
 <div class="art-postcontent">
+<form action="<?$_SERVER['PHP_SELF']?>" method="post" name="pencarian" id="pencarian">
+<table width="600" border="1">
+    <tr>
+    <td>Id Dosen</td>
+    <select name="iddosen" style="width:210px" size=1>  
+    <option value="dsn0001" >dsn0001</option></select>
+    <td><input type="submit" name="submit" id="submit" value="Cari"></td>
+    </tr>
+</table>
+</form>
 
 				<table width="600" border="1">
   <tr>
